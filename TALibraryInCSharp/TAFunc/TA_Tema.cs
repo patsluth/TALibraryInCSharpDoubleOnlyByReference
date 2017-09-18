@@ -3,7 +3,7 @@ namespace TALibraryInCSharp
      {
      public partial class Core
      { 
-        public static RetCode Tema(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, ref int outBegIdx, ref int outNBElement, double[] outReal)
+        public static RetCode Tema(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, ref int outBegIdx, ref int outNBElement, ref double[] outReal)
         {
             if (startIdx < 0)
             {

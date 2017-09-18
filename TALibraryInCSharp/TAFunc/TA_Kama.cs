@@ -3,7 +3,7 @@ namespace TALibraryInCSharp
      {
      public partial class Core
      { 
-        public static RetCode Kama(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, ref int outBegIdx, ref int outNBElement, double[] outReal)
+        public static RetCode Kama(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, ref int outBegIdx, ref int outNBElement, ref double[] outReal)
         {
             double tempReal;
             const double constMax = 0.064516129032258063;

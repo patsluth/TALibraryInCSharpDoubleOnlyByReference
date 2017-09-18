@@ -102,14 +102,14 @@ namespace TALibraryInCSharp
                 return RetCode.AllocErr;
             }
             tempInteger = startIdx - lookbackSignal;
-            RetCode retCode = MovingAverage(tempInteger, endIdx, inReal, optInSlowPeriod, optInSlowMAType, ref outBegIdx1, ref outNbElement1, slowMABuffer);
+            RetCode retCode = MovingAverage(tempInteger, endIdx, inReal, optInSlowPeriod, optInSlowMAType, ref outBegIdx1, ref outNbElement1, ref slowMABuffer);
             if (retCode != RetCode.Success)
             {
                 outBegIdx = 0;
                 outNBElement = 0;
                 return retCode;
             }
-            retCode = MovingAverage(tempInteger, endIdx, inReal, optInFastPeriod, optInFastMAType, ref outBegIdx2, ref outNbElement2, fastMABuffer);
+            retCode = MovingAverage(tempInteger, endIdx, inReal, optInFastPeriod, optInFastMAType, ref outBegIdx2, ref outNbElement2, ref fastMABuffer);
             if (retCode != RetCode.Success)
             {
                 outBegIdx = 0;
@@ -127,7 +127,7 @@ namespace TALibraryInCSharp
                 fastMABuffer[i] -= slowMABuffer[i];
             }
             Array.Copy(fastMABuffer, lookbackSignal, outMACD, 0, (endIdx - startIdx) + 1);
-            retCode = MovingAverage(0, outNbElement1 - 1, fastMABuffer, optInSignalPeriod, optInSignalMAType, ref outBegIdx2, ref outNbElement2, outMACDSignal);
+            retCode = MovingAverage(0, outNbElement1 - 1, fastMABuffer, optInSignalPeriod, optInSignalMAType, ref outBegIdx2, ref outNbElement2, ref outMACDSignal);
             if (retCode != RetCode.Success)
             {
                 outBegIdx = 0;

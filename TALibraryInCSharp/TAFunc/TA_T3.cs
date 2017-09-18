@@ -3,7 +3,7 @@ namespace TALibraryInCSharp
      {
      public partial class Core
      { 
-        public static RetCode T3(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, double optInVFactor, ref int outBegIdx, ref int outNBElement, double[] outReal)
+        public static RetCode T3(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, double optInVFactor, ref int outBegIdx, ref int outNBElement, ref double[] outReal)
         {
             int i;
             if (startIdx < 0)

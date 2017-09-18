@@ -78,7 +78,7 @@ namespace TALibraryInCSharp
         Label_0124:
             if (today > endIdx)
             {
-                RetCode retCode = MovingAverage(0, outIdx - 1, tempBuffer, optInFastD_Period, optInFastD_MAType, ref outBegIdx, ref outNBElement, outFastD);
+                RetCode retCode = MovingAverage(0, outIdx - 1, tempBuffer, optInFastD_Period, optInFastD_MAType, ref outBegIdx, ref outNBElement, ref outFastD);
                 if ((retCode != RetCode.Success) || (outNBElement == 0))
                 {
                     outBegIdx = 0;

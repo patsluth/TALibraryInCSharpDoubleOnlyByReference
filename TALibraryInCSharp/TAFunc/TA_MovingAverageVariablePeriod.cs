@@ -98,7 +98,7 @@ namespace TALibraryInCSharp
                 {
                     int localNbElement = 0;
                     int localBegIdx = 0;
-                    RetCode retCode = MovingAverage(startIdx, endIdx, inReal, curPeriod, optInMAType, ref localBegIdx, ref localNbElement, localOutputArray);
+                    RetCode retCode = MovingAverage(startIdx, endIdx, inReal, curPeriod, optInMAType, ref localBegIdx, ref localNbElement, ref localOutputArray);
                     if (retCode != RetCode.Success)
                     {
                         outBegIdx = 0;

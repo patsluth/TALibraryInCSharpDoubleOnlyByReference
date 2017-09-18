@@ -82,7 +82,7 @@ namespace TALibraryInCSharp
             {
                 return RetCode.BadParam;
             }
-            RetCode retCode = MovingAverage(startIdx, endIdx, inReal, optInTimePeriod, optInMAType, ref outBegIdx, ref outNBElement, tempBuffer1);
+            RetCode retCode = MovingAverage(startIdx, endIdx, inReal, optInTimePeriod, optInMAType, ref outBegIdx, ref outNBElement, ref tempBuffer1);
             if ((retCode != RetCode.Success) || (outNBElement == 0))
             {
                 outNBElement = 0;

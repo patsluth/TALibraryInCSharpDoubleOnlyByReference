@@ -3,7 +3,7 @@ namespace TALibraryInCSharp
      {
      public partial class Core
      { 
-        public static RetCode Mama(int startIdx, int endIdx, double[] inReal, double optInFastLimit, double optInSlowLimit, ref int outBegIdx, ref int outNBElement, double[] outMAMA, double[] outFAMA)
+        public static RetCode Mama(int startIdx, int endIdx, double[] inReal, double optInFastLimit, double optInSlowLimit, ref int outBegIdx, ref int outNBElement, ref double[] outMAMA, ref double[] outFAMA)
         {
             double smoothedValue;
             const double a = 0.0962;

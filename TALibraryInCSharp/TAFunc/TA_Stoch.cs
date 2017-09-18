@@ -87,14 +87,14 @@ namespace TALibraryInCSharp
         Label_0156:
             if (today > endIdx)
             {
-                RetCode retCode = MovingAverage(0, outIdx - 1, tempBuffer, optInSlowK_Period, optInSlowK_MAType, ref outBegIdx, ref outNBElement, tempBuffer);
+                RetCode retCode = MovingAverage(0, outIdx - 1, tempBuffer, optInSlowK_Period, optInSlowK_MAType, ref outBegIdx, ref outNBElement, ref tempBuffer);
                 if ((retCode != RetCode.Success) || (outNBElement == 0))
                 {
                     outBegIdx = 0;
                     outNBElement = 0;
                     return retCode;
                 }
-                retCode = MovingAverage(0, outNBElement - 1, tempBuffer, optInSlowD_Period, optInSlowD_MAType, ref outBegIdx, ref outNBElement, outSlowD);
+                retCode = MovingAverage(0, outNBElement - 1, tempBuffer, optInSlowD_Period, optInSlowD_MAType, ref outBegIdx, ref outNBElement, ref outSlowD);
                 Array.Copy(tempBuffer, lookbackDSlow, outSlowK, 0, outNBElement);
                 if (retCode != RetCode.Success)
                 {

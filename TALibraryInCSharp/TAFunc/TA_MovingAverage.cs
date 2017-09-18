@@ -3,7 +3,7 @@ namespace TALibraryInCSharp
      {
      public partial class Core
      { 
-        public static RetCode MovingAverage(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, MAType optInMAType, ref int outBegIdx, ref int outNBElement, double[] outReal)
+        public static RetCode MovingAverage(int startIdx, int endIdx, double[] inReal, int optInTimePeriod, MAType optInMAType, ref int outBegIdx, ref int outNBElement, ref double[] outReal)
         {
             if (startIdx < 0)
             {
@@ -34,37 +34,37 @@ namespace TALibraryInCSharp
                 switch (optInMAType)
                 {
                     case MAType.Sma:
-                        return Sma(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Sma(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Ema:
-                        return Ema(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Ema(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Wma:
-                        return Wma(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Wma(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Dema:
-                        return Dema(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Dema(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Tema:
-                        return Tema(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Tema(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Trima:
-                        return Trima(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Trima(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Kama:
-                        return Kama(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, outReal);
+                        return Kama(startIdx, endIdx, inReal, optInTimePeriod, ref outBegIdx, ref outNBElement, ref outReal);
 
                     case MAType.Mama:
                         {
                             double[] dummyBuffer = new double[(endIdx - startIdx) + 1];
                             if (dummyBuffer != null)
                             {
-                                return Mama(startIdx, endIdx, inReal, 0.5, 0.05, ref outBegIdx, ref outNBElement, outReal, dummyBuffer);
+                                return Mama(startIdx, endIdx, inReal, 0.5, 0.05, ref outBegIdx, ref outNBElement, ref outReal, ref dummyBuffer);
                             }
                             return RetCode.AllocErr;
                         }
                     case MAType.T3:
-                        return T3(startIdx, endIdx, inReal, optInTimePeriod, 0.7, ref outBegIdx, ref outNBElement, outReal);
+                        return T3(startIdx, endIdx, inReal, optInTimePeriod, 0.7, ref outBegIdx, ref outNBElement, ref outReal);
                 }
                 return RetCode.BadParam;
             }
